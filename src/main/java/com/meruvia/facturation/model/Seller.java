@@ -1,13 +1,12 @@
 package com.meruvia.facturation.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Seller {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -18,10 +17,6 @@ public class Cliente {
 	private String lastname;
 	
 	private String email;
-	
-	private String ci;
-
-	private String dni;
 
 	public long getId() {
 		return id;
@@ -54,22 +49,6 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getCi() {
-		return ci;
-	}
-
-	public void setCi(String ci) {
-		this.ci = ci;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
-		
+	
+	
 }

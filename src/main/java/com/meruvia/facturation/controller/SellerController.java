@@ -10,28 +10,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.meruvia.facturation.model.Client;
-import com.meruvia.facturation.repository.ClienteRepository;
+import com.meruvia.facturation.model.Seller;
+import com.meruvia.facturation.repository.SellerRepository;
 
 @Controller
-@RequestMapping(path="/client")
-public class ClienteController {
+@RequestMapping(path="/seller")
+public class SellerController {
 
 	@Autowired
-	private ClienteRepository clientRepo;
+	private SellerRepository sellerRepo;
 	
 	@PutMapping(path="/create")
 	@ResponseBody
-	public String addCliente(@Valid @RequestBody Client cliTemp) {
-		clientRepo.save(cliTemp);
-		return "Cliente agregado";
+	public String addSeller(@Valid @RequestBody Seller seller) {
+		
+		sellerRepo.save(seller);
+		return "Seller creado";
 	}
 	
 	@GetMapping(path="/all")
 	@ResponseBody
-	public Iterable<Client> getAllClients(){
+	public Iterable<Seller> getAllSeller(){
 		
-		return clientRepo.findAll(); 
+		return sellerRepo.findAll();
 	}
-	
 }
