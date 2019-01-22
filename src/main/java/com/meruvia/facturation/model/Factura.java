@@ -19,7 +19,7 @@ public class Factura {
 	
 	private String observation;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="client_id")
 	private Client client;
 
