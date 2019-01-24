@@ -6,4 +6,5 @@ import com.meruvia.facturation.model.Client;
 
 public interface ClienteRepository extends CrudRepository<Client, Long>{
 
+	public abstract Client findById(long id);
 }
